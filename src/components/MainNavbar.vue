@@ -1,18 +1,19 @@
 <template>
   <div class="header">
     <div class="header-inner">
-      <img class="logo" alt="School Logo" src="@/assets/school-logo.jpg" />
+      <img class="logo" alt="School Logo" src="@/assets/muve.png" />
       <ul class="nav-list">
         <li>About Us</li>
-        <li>Podcast</li>
+        <li>Stories</li>
         <li>Events</li>
-        <li>Gallery</li>
+        <li>Merch</li>
         <li>Contact Us</li>
       </ul>
       <button class="join-button">Join The Lounge</button>
     </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -23,7 +24,6 @@ export default {
 <style scoped>
 .header {
   height: auto;
-  background-color: #fcfdf2;
   margin-top: -55px;
   padding: 10px 20px;
   border-bottom: 2px solid #e0e0e0;
@@ -39,7 +39,7 @@ export default {
 }
 
 .logo {
-  width: 150px;
+  width: 100px;
   height: auto;
   object-fit: contain;
 }
@@ -54,24 +54,26 @@ export default {
 
 .nav-list li {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
   transition: color 0.3s ease;
+  font-family: "Outfit", serif;
 }
 
 .nav-list li:hover {
-  color: #4a5ae5;
+  color: #5873FE;
 }
 
 .join-button {
-  padding: 12px 20px;
-  background-color: #4a5ae5;
+  padding: 15px 20px;
+  background-color: #5873FE;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
+  font-family: "Outfit", serif;
 }
 
 .join-button:hover {

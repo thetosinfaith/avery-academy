@@ -1,128 +1,161 @@
 <template>
-    <section>
-      <div class="hero-bg">
-        <div class="inner-bg">
-          <div class="hero-content">
-            <h1>Thinking of Running Away?</h1>
-            <p>
-              We get it. Home doesn’t always feel like home. But before you make any big decisions,
-              there’s a better way—and we’re here to help you find it.
-            </p>
-            <button>Let’s Figure This Out Together</button>
-            <img src="@/assets/school-logo.jpg" alt="">
+  <section>
+    <div class="hero-bg">
+      <div class="hero-layout">
+        <div class="hero-image">
+          <img src="@/assets/roam.png" alt="Hero Image" />
+        </div>
+        <div class="hero-content">
+          <h1>Your Next Big Move Starts Here!</h1>
+          <p>
+            This academy is for anyone ready to leave home and live independently. Muve provides the support to help you stand on your own feet and build the future you’ve always dreamed of.          </p>
+          <div class="button-group">
+            <button aria-label="Start the journey">Get Support</button>
+            <button aria-label="partner">Partner With Us</button>
 
           </div>
         </div>
       </div>
-    </section>
-  </template>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "HeroSection",
+};
+</script>
+
+<style scoped>
+.hero-bg {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: #5873FE;
+}
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 20px;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 80%;
+  height: 500px;
+  border-radius: 10px;
+  border: 4px dashed white;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+  font-family: "Outfit", sans-serif;
+  margin-bottom: 7%;
+
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  color: white;
+  font-family: "Outfit", serif;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.8;
+  color: white;
   
-  <script>
-  export default {
-    name: "HeroSection",
-  };
-  </script>
-  
-  <style scoped>
-  .hero-bg {
-    background-color: #fcfdf2;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: -10px;
-    padding: 0 20px;
-  }
-  
-  .inner-bg {
-    background-color: #4a5ae5;
-    height: 70vh;
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: -30px;
-    padding: 40px; 
-    text-align: center;
-  }
-  
-  .hero-content {
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.button-group button:first-child {
+    background-color: white;
+    color: #5873FE;
+}
+
+.button-group button:last-child {
+    background-color: #5873FE;
     color: white;
-    max-width: 700px;
+    border: 1px solid white;
+}
+
+.hero-content button {
+  padding: 15px 20px;
+  background-color: white;
+  color: #5873FE;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-family: "Outfit", sans-serif;
+}
+
+.hero-content button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74, 90, 229, 0.3);
+}
+
+@media (max-width: 768px) {
+  .hero-layout {
+    flex-direction: column;
     text-align: center;
   }
-  
+
   .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    font-size: 2.5rem;
   }
-  
+
   .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    word-wrap: break-word;
-  }
-  
-  .hero-content button {
-    padding: 15px 30px;
-    background-color: #fcfdf2;
-    color: #4a5ae5;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
   }
-  
-  .hero-content button:hover {
-    background-color: #4a5ae5;
-    color: #fcfdf2;
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
   }
-  
-  @media (max-width: 768px) {
-    .inner-bg {
-      height: 60vh;
-      width: 90%;
-      border-radius: 15px;
-    }
-  
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
-  
-    .hero-content p {
-      font-size: 1rem;
-    }
-  
-    .hero-content button {
-      font-size: 0.9rem;
-      padding: 10px 20px;
-    }
+
+  .hero-content button {
+    width: 100%;
   }
-  
-  @media (max-width: 480px) {
-    .inner-bg {
-      height: 50vh;
-    }
-  
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-  
-    .hero-content p {
-      font-size: 0.9rem;
-    }
-  
-    .hero-content button {
-      font-size: 0.8rem;
-      padding: 8px 16px;
-    }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
   }
-  </style>
-  
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-content button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+</style>
