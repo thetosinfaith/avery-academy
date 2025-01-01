@@ -2,22 +2,39 @@
   <div class="header">
     <div class="header-inner">
       <img class="logo" alt="School Logo" src="@/assets/muve.png" />
-      <ul class="nav-list">
+      <div class="hamburger" @click="toggleNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-list" :class="{ 'show': isNavVisible }">
         <li>About Us</li>
         <li>Stories</li>
         <li>Events</li>
         <li>Merch</li>
         <li>Contact Us</li>
+        <li class="mobile-join-button">
+          <button class="join-button">I’m Ready to Muve</button>
+        </li>
       </ul>
-      <button class="join-button">Join The Lounge</button>
+      <button class="join-button desktop-join-button">I’m Ready to Muve</button>
     </div>
   </div>
 </template>
 
-
 <script>
 export default {
   name: "MainNavbar",
+  data() {
+    return {
+      isNavVisible: false,
+    };
+  },
+  methods: {
+    toggleNav() {
+      this.isNavVisible = !this.isNavVisible;
+    },
+  },
 };
 </script>
 
@@ -34,7 +51,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -50,6 +67,7 @@ export default {
   padding: 0;
   margin: 0;
   gap: 50px;
+  transition: all 0.3s ease;
 }
 
 .nav-list li {
@@ -71,7 +89,7 @@ export default {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.2rem;
   transition: background-color 0.3s ease;
   font-family: "Outfit", serif;
 }
@@ -80,26 +98,66 @@ export default {
   background-color: #4a065d;
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 5px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.desktop-join-button {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .header-inner {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
   }
 
   .nav-list {
     flex-direction: column;
     gap: 20px;
     margin-top: 15px;
+    display: none;
+  }
+
+  .desktop-join-button {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-list.show {
+    display: flex;
+  }
+
+  .mobile-join-button {
+    display: block;
+    text-align: center;
   }
 
   .join-button {
-    margin-top: 10px;
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    width: 120px;
+    width: 60px;
   }
 
   .nav-list li {

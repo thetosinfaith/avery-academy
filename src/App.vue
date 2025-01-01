@@ -2,6 +2,7 @@
   <div>
     <MainNavbar />
     <HeroSection />
+    <OfferSection/>
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 
 import MainNavbar from './components/MainNavbar.vue';
 import HeroSection from './components/HeroSection.vue';
+import OfferSection from './components/OfferSection.vue';
 
 export default {
   name: 'App',
   components: {
     MainNavbar,
-    HeroSection
+    HeroSection,
+    OfferSection,
   }
 }
 </script>
